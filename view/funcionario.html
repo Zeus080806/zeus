@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro funcionarios</title>
+</head>
+<body>
+    <div class="container"> 
+        <h2 class="mt-5">Formulario de funcionarios</h2>
+        <form id="formulariofactura" action="/fact" method="POST" class="mt-3">
+    
+            <div class="mb-3">
+                <label for="idusuario" class="form-label">ID usuario:</label>
+                <input type="number" name="idusuario" id="idusuario" class="form-control" required>
+            </div>
+    
+            <div class="mb-3">
+                <label for="cedula" class="form-label">Cedula:</label>
+                <input type="text" name="cedula" id="cedula" class="form-control" required>
+            </div>
+    
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre:</label>
+                <input type="text" name="nombre" id="nombre" class="form-control" required>
+            </div>
+    
+            <div class="mb-3">
+                <label for="apellido" class="form-label">Apellidos:</label>
+                <input type="text" name="apellido" id="apellido" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="correo" class="form-label">Correo electronico:</label>
+                <input type="email" name="correo" id="correo" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="eps" class="form-label">EPS:</label>
+                <input type="text" name="eps" id="eps" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="fp" class="form-label">Fondo de pension:</label>
+                <input type="text" name="fp" id="fp" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="hijos" class="form-label">Numero de hijos:</label>
+                <input type="text" name="hijos" id="hijos" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="estadocivil" class="form-label">Estado civil:</label>
+                <input type="text" name="estadocivil" id="estadocivil" class="form-control" required>
+            </div>
+    
+   
+             <button type="submit" class="btn btn-primary">Registrar funcionario</button>
+    
+        </form>
+    </div> 
+</body>
+</html>

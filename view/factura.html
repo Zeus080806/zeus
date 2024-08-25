@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facturas</title>
+</head>
+<body>
+    <div class="container"> 
+        <h2 class="mt-5">Formulario de factura</h2>
+        <form id="formulariofactura" action="/fact" method="POST" class="mt-3">
+    
+            <div class="mb-3">
+                <label for="idfactura" class="form-label">ID factura:</label>
+                <input type="number" name="idfactura" id="idfactura" class="form-control" required>
+            </div>
+    
+            <div class="mb-3">
+                <label for="nombrep" class="form-label">Marca:</label>
+                <input type="text" name="nombrep" id="nombrep" class="form-control" required>
+            </div>
+    
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripcion de la factura:</label>
+                <input type="text" name="descripcion" id="descripcion" class="form-control" required>
+            </div>
+    
+            <div class="mb-3">
+                <label for="precio" class="form-label">Precio:</label>
+                <input type="number" name="precio" id="precio" class="form-control" required>
+            </div>
+    
+   
+             <button type="submit" class="btn btn-primary">Generar factura</button>
+    
+        </form>
+    </div> 
+</body>
+</html>
