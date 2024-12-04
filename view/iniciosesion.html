@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,10 +37,10 @@
 <body>
     <div class="form-container">
         <h2 class="text-center mb-4">Iniciar Sesión</h2>
-        <form action="/sesi" id="formularioinciosesion" method="post">
+        <form id="formularioinciosesion" method="post">
             <div class="mb-3">
-                <label for="usuario" class="form-label">Usuario:</label>
-                <input type="text" name="usuario" id="usuario" class="form-control" required>
+                <label for="nombre" class="form-label">Usuario:</label>
+                <input type="text" name="nombre" id="nombre" class="form-control" required>
             </div>
 
             <div class="mb-3">
@@ -49,10 +49,41 @@
             </div>
 
             <button type="submit" class="btn btn-primary w-100 mb-3">Iniciar Sesión</button>
-                        
+            
+            <p class="text-center">¿No tienes cuenta? <a href="/registro" class="text-link">Regístrate aquí</a></p>
         </form>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('formularioinciosesion').addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const usuario = document.getElementById('nombre').value;
+            const contrasena = document.getElementById('contrasena').value;
+
+            const data = { usuario, contrasena };
+
+            try {
+                const response = await fetch('/sesi', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    window.location.href = '/pagina'; 
+                } else {
+                    alert(result.message); 
+                }
+            } catch (error) {
+                alert('Error en la solicitud');
+            }
+        });
+    </script>
 </body>
 </html>
